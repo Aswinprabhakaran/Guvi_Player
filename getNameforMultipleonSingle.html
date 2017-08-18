@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Game</title>
+<link rel="icon" href="Tic-Tac-Toe-Game.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+window.addEventListener("load",function() {
+	var ele=document.getElementById("submitbtn");
+	ele.addEventListener("click",function() {
+		var pla1=document.getElementById("player1").value;
+		var pla2=document.getElementById("player2").value;
+		 if(pla1.length==0||pla2.length==0) {
+				alert("Please fill the player Names");
+			}
+		 else if(pla1==pla2) {
+			alert("Both player Names as same");
+			}
+		else{
+			//alert(pla1);
+		//	alert(pla2);
+			alert("Starting Game");
+			sessionStorage.setItem("player1",pla1);
+			sessionStorage.setItem("player2",pla2);
+			 document.getElementById("table").action="game1.html";
+			document.getElementById("table").submit();
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h1>Enter the 2 player names</h1>
+<div id="content-holder">
+<form id="table" method="POST">
+<br />
+<img alt="player.png" src="player.png" id="player-icon"/> Player 1 <input type="text" id="player1" placeholder="Player Name" /><br />
+<img alt="player.png" src="player.png" id="player-icon"/> Player 2 <input type="text" id="player2" placeholder="Player Name" />
+<center><p id="submitbtn" >Start</p></center>
+</form>
+</div>
+</body>
+</html>

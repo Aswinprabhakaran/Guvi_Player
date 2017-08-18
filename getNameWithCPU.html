@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Game</title>
+<link rel="icon" href="Tic-Tac-Toe-Game.png" type="image/png">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+window.addEventListener("load",function() {
+	var ele=document.getElementById("submitbtn");
+	ele.addEventListener("click",function() {
+		var pla1=document.getElementById("player1").value;
+		 if(pla1.length==0) {
+				alert("Please fill the player Name");
+			}
+		else{
+			alert("Starting Game");
+			sessionStorage.setItem("player1",pla1);
+			 document.getElementById("table").action="LevelSelect.html";
+			document.getElementById("table").submit();
+		}
+	});
+});
+</script>
+</head>
+<body>
+<h1>Enter the player names</h1>
+<div id="content-holder">
+<form id="table" method="POST">
+<br /><br />
+<img alt="player.png" src="player.png" id="player-icon"/> Player 1 <input type="text" id="player1" placeholder="Player Name" />
+<center><p id="submitbtn" class="create-link">Start</p></center>
+</form>
+</div>
+</body>
+</html>
